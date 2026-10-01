@@ -1,2 +1,2 @@
-# jsc4486.gitbub.io
+# jsc4486.github.io
 Seung-Chan Jung | Research Portfolio
