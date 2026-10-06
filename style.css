@@ -47,3 +47,27 @@ dialog::backdrop{background:#10252ccc}.dialog-bar{display:flex;align-items:cente
 @media(max-width:850px){.project-body{grid-template-columns:1fr;gap:22px}.project-copy{display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.project-copy .paper-link{grid-column:1/-1}.project-intro{margin-bottom:0}.project-copy dt:first-child{margin-top:0}.research-map{gap:18px}.hero-profile{gap:28px;grid-template-columns:minmax(0,1fr) 260px}}
 @media(max-width:650px){.topbar,main,footer{padding-left:22px;padding-right:22px}.topbar{padding-top:18px;padding-bottom:18px}.hero{padding:35px 0 38px;margin-bottom:35px}.hero-profile{grid-template-columns:1fr;gap:23px}.profile-photo{max-width:360px}.hero h1{font-size:39px}.hero .intro{font-size:15px}.hero-links{gap:16px}.section-heading h2{font-size:25px}.section-heading h2 span{font-size:13px;white-space:normal}.section-intro{font-size:13px}.research-map{grid-template-columns:1fr;gap:0;padding-bottom:20px}.research-map .research-row{padding:16px 0}.project-nav{gap:7px;font-size:11px;max-width:none;justify-content:flex-start}.project{padding:26px 0}.project-heading{gap:12px;margin-bottom:18px}.project-heading h3{font-size:21px}.project-heading .eyebrow{font-size:9px;letter-spacing:.05em}.project-number{font-size:25px}.project-copy{display:block}.project-intro{font-size:14px;margin-bottom:16px}.project-copy dt:first-child{margin-top:16px}.figure-open{padding:9px}.role-grid{grid-template-columns:1fr}.hero-links .cv-link{width:auto}dialog{padding:12px}.dialog-bar p{font-size:12px}.dialog-close{padding:6px 8px}}
 @media print{.project-nav,.zoom-label,.motion-toggle,.dialog-close{display:none}.project{break-inside:avoid}.figure-open{border:0}.project-body{grid-template-columns:1fr 1fr}.hero{margin-bottom:20px;padding:0 0 20px}.robot-motion{display:none}}
+/* Compact research figures and requested typography — 2026-10-06 */
+:root{--figure-bg:#f4f6f6;--font-title:"Times New Roman",Times,"Malgun Gothic",serif;--font-subtitle:Helvetica,Arial,"Malgun Gothic",sans-serif;--font-body:Calibri,Carlito,"Malgun Gothic",Arial,sans-serif}
+body{font-family:var(--font-body)}
+h1,h2,.english-name{font-family:var(--font-title);letter-spacing:normal}
+h3,h4,h2 span,dt,.category,.eyebrow,.wordmark,nav,button{font-family:var(--font-subtitle)}
+p,dd,li,figcaption,.paper-link,footer{font-family:var(--font-body)}
+p.category,p.eyebrow{font-family:var(--font-subtitle)}
+.project-body{grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:32px}
+.project figure{width:100%;max-width:380px}
+.figure-open{padding:12px;background:var(--figure-bg);border-color:#e3e8e8;isolation:isolate}
+.image-frame{background:var(--figure-bg);isolation:isolate}
+.research-image{mix-blend-mode:multiply}
+/* White SVG masks and label backgrounds blend into the same figure surface. */
+.dialog-image{background:var(--figure-bg);padding:16px;border-radius:3px;max-width:1000px}
+.lidar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 8px;aspect-ratio:auto}
+.lidar-tile{display:flex;min-width:0;flex-direction:column;gap:4px}
+.lidar-panel{display:flex;width:100%;aspect-ratio:4/3;align-items:center;justify-content:center;overflow:hidden;background:#e8eded}
+.lidar-panel>img{display:block;width:100%;height:100%;object-fit:contain}
+.lidar-models{flex-direction:column}.lidar-models>img{height:50%;width:100%;object-fit:contain}
+.robot-panel{background:#292b2a}.robot-panel .robot-motion{position:static;left:auto;top:auto;aspect-ratio:auto;width:100%;height:100%;object-fit:contain}
+.tile-label{font-family:var(--font-subtitle);font-size:9px;line-height:1.35;color:var(--muted);text-align:left}
+.dialog-image .tile-label{font-size:12px}.dialog-image .lidar-grid{gap:18px 14px}
+@media(max-width:850px){.project-body{grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:24px}.project figure{max-width:320px}.project-copy{display:block}.project-intro{margin-bottom:16px}}
+@media(max-width:650px){.project-body{grid-template-columns:1fr;gap:20px}.project figure{max-width:320px;margin:0 auto}.figure-open{padding:10px}.project-copy{display:block}.dialog-image{padding:6px}.dialog-image .lidar-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 8px}.dialog-image .tile-label{font-size:10px}}
